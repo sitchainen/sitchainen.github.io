@@ -1,0 +1,13 @@
+include: ['assets/', 'CNAME']
+exclude: ['.ruby-version', 'README.md', 'Rakefile', 'Gemfile', 'Gemfile.lock']
+encoding: UTF-8
+
+permalink: /:categories/:title
+
+title: iBranDev
+tagline: Site Tagline
+production_url : http://www.ibrandev.com
+
+navigation:
+ - url: /
+   title: 首页
