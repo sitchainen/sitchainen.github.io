@@ -12,8 +12,79 @@
         <link href="http://oulthdsdy.bkt.clouddn.com/custom.css" rel="stylesheet" />
    	    <script type="text/javascript" charset="utf-8" src="http://cdn.bootcss.com/jquery/3.0.0-rc1/jquery.min.js"></script>
 
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+              adjust("TopMap", 1920, 6026);
+              adjust("PhoneMap", 1920, 3758);
+            });
+            // var timeout = null;//onresize触发次数过多，设置定时器
+            window.onresize = function () {
+                // clearTimeout(timeout);
+                // timeout = setTimeout(function () { window.location.reload(); }, 100);//页面大小变化，重新加载页面以刷新MAP
+                adjust("TopMap", 1920, 2268);
+                adjust("PhoneMap", 1920, 3758);
+            }
+
+            //获取MAP中元素属性
+            function adjust(map_id, imageWidth, imageHeigth) {
+                var map = document.getElementById(map_id);
+                var elements = map.childNodes;
+                for (var i = 0; i < elements.length - 1; i++) {
+                    if(elements[i].nodeName == 'AREA'){
+                      var oldCoords = elements[i].getAttribute('old_coords');
+                      var newcoords = adjustPosition(oldCoords, imageWidth, imageHeigth);
+                      elements[i].setAttribute("coords", newcoords);
+                    }
+                }
+                var test = elements;
+            }
+
+            //调整MAP中坐标
+            function adjustPosition(position, imageWidth, imageHeigth) {
+                var pageWidth = document.body.clientWidth;//获取页面宽度
+                // var pageHeith = document.body.clientHeight;//获取页面高度
+                var each = position.split(",");
+                //获取每个坐标点
+                for (var i = 0; i < each.length; i++) {
+                    each[i] = Math.round(parseFloat(each[i]) * pageWidth / imageWidth).toString();//x坐标
+                    i++;
+                    each[i] = Math.round(parseFloat(each[i]) * pageWidth / imageWidth).toString();//y坐标
+                }
+                //生成新的坐标点
+                var newPosition = "";
+                for (var i = 0; i < each.length; i++) {
+                    newPosition += each[i];
+                    if (i < each.length - 1) {
+                        newPosition += ",";
+                    }
+                }
+                // imageWidth = pageWidth;
+                // imageHeigth = pageHeith;
+                return newPosition;
+            }
+        </script>
+
+        <script type="text/javascript">
+            function goToTop() {
+                location.href = "#top";
+            }
+            function goToBuyNow() {
+                $("html,body").animate({scrollTop: $("#phone").offset().top}, 500);//定位到《静夜思》
+            }
+        </script>
     </head>
     <body>
-       <img style="width: 100%" class="img-responsive center-block" src="img/sc_en.jpg" alt="index">
+
+        <map id="TopMap" name="newbook">
+          <area shape="rect" old_coords="826,386,1013,440" coords="826,386,1013,440" onclick="goToBuyNow()" target="_blank" alt="Buy Now" title="Buy Now">
+        </map>
+        <map id="PhoneMap" name="newbook2">
+          <area shape="rect" old_coords="850,585,1120,675" coords="850,585,1120,675" href="http://itunes.apple.com/us/app/wei/id1271243750" onclick="trackOutboundLink('http://itunes.apple.com/us/app/wei/id1271243750'); return false;" target="_blank" alt="Buy Now1" title="iOS APP">
+          <area shape="rect" old_coords="1174,585,1444,675" coords="1174,585,1444,675" href="https://play.google.com/store/apps/details?id=ibrandev.com.sharinglease" onclick="trackOutboundLink('https://play.google.com/store/apps/details?id=ibrandev.com.sharinglease'); return false;" target="_blank" alt="Buy Now2" title="Android APP">
+        </map>
+        <img usemap="#newbook" id="top" style="width: 100%" class="img-responsive center-block" src="img/sc1_en.jpg" alt="index">
+        <img usemap="#newbook2" id="phone" style="width: 100%" class="img-responsive center-block" src="img/sc2_en.png" alt="index">
+
     </body>
 </html>
