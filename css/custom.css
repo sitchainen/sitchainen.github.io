@@ -1,0 +1,130 @@
+
+.content{
+  width: 980px;
+  background-color: white;
+  margin: auto;
+}
+
+.qa_Q{
+  width: 900px;
+  margin: 20px auto;
+  text-align: left;
+  color: #484848;
+  font-size: 300%;
+}
+
+.qa_A{
+  width: 900px;
+  margin: 20px auto;
+  text-align: left;
+  color: #999999;
+  font-size: 300%;
+}
+
+.titleStyle{
+  width: 900px;
+  margin: 20px auto;
+  color: #484848;
+  text-align: left;
+  font-size: 300%;
+}
+
+.subTitleStyle{
+  width: 900px;
+  margin: 20px auto;
+  text-align: left;
+  color: #999999;
+  font-size: 300%;
+}
+
+.qa_more{
+  width: 900px;
+  margin: 100px auto;
+  text-align: center;
+  color: #999999;
+  font-size: 300%;
+}
+
+.custom-container {
+  text-align: center;
+  width: 960px;
+  margin: auto;
+}
+
+.custom-container-img {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.custom-container .box {
+  width: 960px !important;
+  margin: auto;
+  margin-top: -200px;
+}
+
+.custom-container .bg-box {
+}
+
+.custom-container .bg {
+  /*background: url("../img/bg2.png");*/
+  height: 508px;
+}
+
+.custom-container-img .ios_download{
+  background: url(../img/download_ios_image) no-repeat;
+  filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+   -moz-background-size:100% 100%;
+   background-size:100% 100%;
+  width: 200px;
+  height: 80px;
+  border: none;
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+  margin-top: 80px;
+}
+
+.custom-container-img .android_download{
+  background: url(../img/download_andriod_image) no-repeat;
+  filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+   -moz-background-size:100% 100%;
+   background-size:100% 100%;
+  width: 200px;
+  height: 80px;
+  border: none;
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+  margin-top: 80px;
+}
+
+.custom-container .box-padding{
+  margin-top: 20px;
+}
+
+.custom-container .url{
+  color: #969696;
+  font-size: 33pt;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.words {
+  padding-top: 72px;
+}
+
+.img-responsive {
+    display: block;
+    max-width:100%;
+    height: auto;
+}
+
+.img-responsive-width {
+    display: block;
+    width:100%;
+    height: auto;
+}
