@@ -10,41 +10,35 @@
         <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
         <link href="http://oulthdsdy.bkt.clouddn.com/custom.css" rel="stylesheet" />
    	    <script type="text/javascript" charset="utf-8" src="http://cdn.bootcss.com/jquery/3.0.0-rc1/jquery.min.js"></script>
+        <script type="text/javascript">
+
+            function GetQueryString(name)
+            {
+                 var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+                 var r = window.location.search.substr(1).match(reg);
+                 if(r!=null)return unescape(r[2]); return null;
+            }
+
+            // 页面启动获取参数
+            $(document).ready(function(){
+             //do something
+                if (GetQueryString("lang") == 'en') {
+                  window.location.replace('white_paper_en.html');
+                }
+                else if (GetQueryString("lang") == 'cn'){
+                  window.location.replace('white_paper_cn.html');
+                }
+                else {
+                  window.location.replace('white_paper.html');
+                }
+
+        //  self.location = 'www.sharinglease.com';
+            })
+
+        </script>
 
     </head>
     <body>
-      <div id='en'>
-        <img style="width: 100%" class="img-responsive center-block" src="img/en_p01.jpg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/en_p02.jpg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/en_p03.jpg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/en_p04.jpg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/en_p05.jpg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/en_p06.jpg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/en_p07.jpg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/en_p08.jpg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/en_p09.jpg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/en_p10.jpg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/en_p11.jpg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/en_p12.jpg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/en_p13.jpg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/en_p14.jpg" alt="index">
-      </div>
-      <div id='cn'>
-        <img style="width: 100%" class="img-responsive center-block" src="img/p01.jpeg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/p02.jpeg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/p03.jpeg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/p04.jpeg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/p05.jpeg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/p06.jpeg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/p07.jpeg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/p08.jpeg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/p09.jpeg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/p10.jpeg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/p11.jpeg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/p12.jpeg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/p13.jpeg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/p14.jpeg" alt="index">
-        <img style="width: 100%" class="img-responsive center-block" src="img/p15.jpeg" alt="index">
-      </div>
+      Testing
     </body>
 </html>
